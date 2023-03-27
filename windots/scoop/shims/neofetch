@@ -1,0 +1,3 @@
+#!/bin/sh
+# C:\Users\isu\scoop\apps\neofetch\current\neofetch
+"C:\Users\isu\scoop\apps\neofetch\current\neofetch"  "$@"

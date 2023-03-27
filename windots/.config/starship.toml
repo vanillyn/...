@@ -1,0 +1,136 @@
+palette = "catppuccin_mocha"
+format = """
+[](red)\
+$username\
+[](bg:maroon fg:red)\
+$directory\
+[](fg:maroon bg:flamingo)\
+$git_commit\
+[ ](fg:flamingo bg:rosewater)\
+$git_branch\
+$git_status\
+[](fg:rosewater bg:#e8d8d8)\
+[ ](fg:#e8d8d8)\
+"""
+right_format = """
+[](red)\
+$os\
+$c\
+$java\
+$nodejs\
+$cmd_duration\
+$time\
+[](fg:red)\
+"""
+# Disable the blank line at the start of the prompt
+add_newline = false
+
+[cmd_duration]
+min_time = 2
+format = "[$duration ]($style)"
+style = "bg:red fg:base"
+show_notifications = true
+min_time_to_notify = 50_000
+
+# You can also replace your username with a neat symbol like   or disable this
+# and use the os module below
+[username]
+show_always = true
+style_user = "bg:red fg:base"
+style_root = "bg:red fg:base"
+format = '[$user ]($style)'
+disabled = false
+
+[git_commit]
+commit_hash_length = 4
+tag_symbol = ' '
+style = "bg:rosewater fg:base"
+format = '[\($hash$tag\)]($style) '
+
+# An alternative to the username module which displays a symbol that
+# represents the current operating system
+[os]
+style = "bg:red fg:base"
+format = "[ $symbol]($style)"
+disabled = false
+
+[os.symbols]
+Windows = " "
+
+[directory]
+style = "bg:maroon fg:base"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+# Here is how you can shorten some long paths by text replacement
+# similar to mapped_locations in Oh My Posh:
+[directory.substitutions]
+"Documents" = " "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
+# Keep in mind that the order matters. For example:
+# "Important Documents" = "  "
+# will not be replaced, because "Documents" was already substituted before.
+# So either put "Important Documents" before "Documents" or use the substituted version:
+# "Important  " = "  "
+
+[c]
+symbol = " "
+style = "bg:red"
+format = '[ $symbol ($version) ]($style)'
+
+[git_branch]
+symbol = ""
+style = "bg:rosewater fg:base"
+format = '[ $symbol $branch ]($style)'
+
+[git_status]
+style = "bg:rosewater fg:base"
+format = '[$all_status$ahead_behind ]($style)'
+
+[java]
+symbol = " "
+style = "bg:red"
+format = '[ $symbol ($version) ]($style)'
+
+[nodejs]
+symbol = ""
+style = "bg:red"
+format = '[ $symbol ($version) ]($style)'
+
+
+[time]
+disabled = false
+time_format = "%R" # Hour:Minute Format
+style = "bg:red fg:base"
+format = '[  $time ]($style)'
+
+[palettes.catppuccin_mocha]
+rosewater = "#f5e0dc"
+flamingo = "#f2cdcd"
+pink = "#f5c2e7"
+mauve = "#cba6f7"
+red = "#f38ba8"
+maroon = "#eba0ac"
+peach = "#fab387"
+yellow = "#f9e2af"
+green = "#a6e3a1"
+teal = "#94e2d5"
+sky = "#89dceb"
+sapphire = "#74c7ec"
+blue = "#89b4fa"
+lavender = "#b4befe"
+text = "#cdd6f4"
+subtext1 = "#bac2de"
+subtext0 = "#a6adc8"
+overlay2 = "#9399b2"
+overlay1 = "#7f849c"
+overlay0 = "#6c7086"
+surface2 = "#585b70"
+surface1 = "#45475a"
+surface0 = "#313244"
+base = "#1e1e2e"
+mantle = "#181825"
+crust = "#11111b"
